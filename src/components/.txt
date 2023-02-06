@@ -1,0 +1,49 @@
+<div className='contacts-con'>
+        <header>
+              <h2>REACH US AT</h2>
+        </header>
+        <Contact link="support@kicksup.com" description="support@kicksup.com"/>
+        <Contact link="info@kicksup.com" description="info@kicksup.com"/>
+        <Contact link="feedback@kicksup.com" description="feedback@kicksup.com"/>
+        <Contact link="jobs@kicksup.com" description="jobs@kicksup.com"/>
+        <Contact link="job@kicksup.com" description="job@kicksup.com"/>
+        <Contact link="job2@kicksup.com" description="job2@kicksup.com"/>
+      </div>
+
+
+      <Card 
+          img="https://media.istockphoto.com/id/956501428/photo/sport-shoes-on-isolated-white-background.jpg?s=612x612&w=0&k=20&c=BdklqnfGUvf02-2CxYsw-AnrbE3e-B5zhE9JQILEEW4="
+          rating="2.5"
+          title="hello world"
+          price="2000"
+          />
+
+
+
+
+import React from 'react'
+import styled from 'styled-components'
+import { Data } from '../pages/Data'
+import Card from './Card'
+console.log(Data);
+
+
+export default function Shoes(props) {
+      const cards=Data.map(item=>{
+        return (
+            <Card 
+                img={item.img}
+                rating={item.stats.rating}
+                viewCount={item.stats.viewCount}
+                location={item.location}
+                title={item.tilte}
+                price={item.price}
+            />
+        )
+      })
+  return (
+    <div>
+     {cards}
+    </div>
+  )
+}
